@@ -1,8 +1,11 @@
-node{
-  stage(`SCM Checkout`){
-    git `https://github.com/parengh/maven-test`
+
+node {
+  def mvn = tool (name: 'maven3', type: 'maven') + '/bin/mvn'
+  stage('SCM Checkout'){
+        git 'https://github.com/parengh/maven-test'
   }
-  stage(`Compile Package`){
-    sh `mvn package`
+  
+  stage('Compile Package'){
+    sh "${mvn} clean package"
   }
 }
