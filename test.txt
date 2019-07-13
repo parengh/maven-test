@@ -1,1 +1,2 @@
 Test on java using maven
+It's in Alpha phase
